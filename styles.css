@@ -1,0 +1,90 @@
+/* General layout */
+body {
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 0;
+    background-color: #000000; /* Matches the main menu background */
+    height: 90vh; /* Full viewport height */
+}
+
+.main-menu {
+    background-color: #000000;
+    padding: 40px; /* Increased padding for more space */
+    color: white;
+    text-align: center;
+    height: 90vh; /* Ensures this section takes up the entire height of the viewport */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers the content vertically */
+}
+
+.main-menu h1 {
+    margin-bottom: 50px; /* Add space between heading and buttons */
+    
+}
+
+.main-menu button {
+    background-color: #0e0e0e;
+    color: white;
+    border: none;
+    padding: 10px 20px; /* Makes the button smaller */
+    margin: 10px;
+    cursor: pointer;
+    font-family: 'Courier New', Courier, monospace; /* Ensures button font is consistent */
+    border-radius: 25px; /* Adds curvature to the buttons */
+    font-size: 16px; /* Smaller font size */
+    width: 500px; /* Makes the button smaller in width */
+    height: 50px;
+}
+.main-menu {
+    align-items: center; /* Centers buttons horizontally */
+}
+.main-menu button:hover {
+    background-color: #305a84;
+}
+
+/* Work and Study Section */
+.iframe-container {
+    display: flex;
+    height: 100vh;
+}
+
+/* To-Do list iframe takes up 75% of the screen */
+.iframe-todo {
+    flex: 3;
+    border: none;
+}
+
+/* Study Timer iframe takes up 25% */
+.iframe-study-timer {
+    flex: 1;
+    border: none;
+}
+
+/* Sidebar specific styling (if needed) */
+.sidebar {
+    width: 250px;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    position: fixed;
+    height: 100vh;
+    top: 0;
+    left: 0;
+}
+
+/* Main content to shift for sidebar */
+.main-content {
+    margin-left: 250px;
+    padding: 20px;
+}
+/* Position the image in the top left corner */
+.top-left-image {
+    position: absolute;
+    top: 20px; /* Adjust as needed */
+    left: 20px; /* Adjust as needed */
+    width: 400px; /* Adjust size */
+    height: auto; /* Maintain aspect ratio */
+    z-index: 1000; /* Make sure it stays on top */
+}
+

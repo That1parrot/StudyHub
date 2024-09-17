@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <img src="cat_1.jpg" alt="Study Hub Logo" class="top-left-image">
+
+    <title>Study Hub</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS -->
+</head>
+<body>
+    <!-- Main Menu -->
+    <div class="main-menu">
+        <h1>Study Hub</h1>
+        <button onclick="showSection('Study-FocusTimer')">Study with FocusTimer </button>
+        <button onclick="showSection('Pomodoro-Timer')">Study with Pomodoro Timer 2</button>
+        <!-- <button onclick="showSection('testing3')">Testing 3</button> -->
+    </div>
+
+    <div id="Study-FocusTimer" class="section" style="display:none;">
+        <div class="iframe-container">
+            <!-- To-Do List iFrame (takes up most of the space) -->
+            <iframe src="a_todolist/index.html" class="iframe-todo"></iframe>
+            <!-- Study Timer iFrame (on the right side) -->
+            <iframe src="a_studytimer/index.html" class="iframe-study-timer"></iframe>
+        </div>
+    </div>
+
+    <!-- Section for Pomodoro Timer -->
+    <div id="Pomodoro-Timer" class="section" style="display:none;">
+        <div class="iframe-container">
+            <!-- To-Do List iFrame (takes up most of the space) -->
+            <iframe src="a_todolist/index.html" class="iframe-todo"></iframe>
+            <!-- Study Timer iFrame (on the right side) -->
+            <iframe src="a_Pomodoro-Timer/index.html" class="iframe-study-timer"></iframe>
+        </div>
+    </div>
+
+    <!-- Section for Testing 3
+    <div id="testing3" class="section" style="display:none;">
+        <h1>Testing 3</h1>
+        <iframe src="testing3.html" class="full-iframe"></iframe>
+    </div> -->
+
+    <!-- JavaScript to switch between sections -->
+    <script>
+        function showSection(section) {
+            // Hide all sections
+            document.querySelectorAll('.section').forEach(function(el) {
+                el.style.display = 'none';
+            });
+            // Show the selected section
+            document.getElementById(section).style.display = 'block';
+    
+            // Scroll to the section smoothly
+            document.getElementById(section).scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'  // Aligns the top of the section with the top of the scrollable area
+            });
+        }
+    </script>
+       
+</body>
+</html>
