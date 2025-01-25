@@ -1,0 +1,149 @@
+/* General body and layout styling */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+/* Apply the background directly to the body */
+body {
+    background-color: #ccc;
+    background: linear-gradient(to bottom, #ccc, #ccc); /* Default gradient */
+}
+
+.pomodoro-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    padding: 30px; /* Increase padding */
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 300px; /* Increase the width */
+}
+
+#progress-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin-bottom: 20px;
+}
+
+#timer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 64px; /* Make the timer text larger */
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+}
+
+/* General button styling (modified for larger buttons) */
+button {
+    padding: 15px 25px; /* Increased padding for larger buttons */
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px; /* Increased margin for better spacing */
+    font-size: 18px; /* Larger font size for better readability */
+}
+
+
+#resetBtn {
+    background-color: #f44336;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#resetBtn:hover {
+    background-color: #d32f2f;
+}
+
+/* Background customization controls */
+#toggleGradientButton {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+#toggleGradientButton:hover {
+    background-color: #45a049;
+}
+
+#backgroundLibrary {
+    display: none;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#backgroundLibrary label {
+    margin-bottom: 5px;
+}
+
+#backgroundLibrary input[type="color"] {
+    margin: 5px 0;
+    width: 100px;
+    height: 30px;
+    border: none;
+    cursor: pointer;
+}
+
+#backgroundLibrary button {
+    margin-top: 10px;
+    background-color: #4CAF50;
+}
+
+#backgroundLibrary button:hover {
+    background-color: #45a049;
+}
+/* Circular progress bar styles */
+#progress-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin-bottom: 20px;
+}
+
+svg.progress-circle {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg); /* Rotate to make progress start from the top */
+}
+
+circle.progress-background {
+    fill: none;
+    stroke: #e6e6e6; /* Background color of the circle */
+    stroke-width: 15;
+}
+
+circle.progress {
+    fill: none;
+    stroke: #4CAF50; /* Progress bar color */
+    stroke-width: 15;
+    stroke-linecap: round;
+    stroke-dasharray: 565; /* 2 * Pi * r where r = 90 */
+    stroke-dashoffset: 565;
+    transition: stroke-dashoffset 1s linear;
+}
+
+.customize-timer div {
+    margin-bottom: 10px; /* Add spacing between the two input sections */
+}

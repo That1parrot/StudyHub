@@ -1,0 +1,169 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+  min-height: 100vh; /* so the background can extend fully */
+}
+
+.main-content {
+  width: 80%;
+  max-width: 900px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Input container for tasks */
+.input-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.input-container input,
+.input-container select,
+.input-container button {
+  padding: 10px;
+  margin: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Buttons */
+button {
+  background-color: #3e7cb1;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #305a84;
+}
+
+/* Progress bar styling */
+.progress-container {
+  margin: 20px 0;
+}
+#progress-bar {
+  width: 100%;
+  background-color: #f4f4f4;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  height: 20px;
+}
+#progress {
+  height: 100%;
+  background-color: #3e7cb1;
+  width: 0%;
+  border-radius: 5px;
+}
+
+/* Task list styling */
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+.task {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  margin: 5px 0;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.completed-task {
+  text-decoration: line-through;
+  color: #999;
+}
+
+/* Priority color coding */
+.low-priority { background-color: #e0f7fa; }
+.medium-priority { background-color: #fff9c4; }
+.high-priority { background-color: #ffccbc; }
+
+button.edit { background-color: #ffcc00; }
+button.delete { background-color: #e74c3c; }
+button.complete { background-color: #28a745; }
+button.complete:hover { background-color: #218838; }
+
+/* Import/Export container on the right */
+.import-export-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+.import-button,
+#export-button {
+  background-color: #3e7cb1;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+/***********************************************
+  BACKGROUND CONTROLS + PRESET LIBRARY
+***********************************************/
+.background-controls,
+.preset-library {
+  width: 80%;
+  max-width: 900px;
+  background: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  margin-top: 20px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.background-controls h2,
+.preset-library h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.background-controls label {
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.background-controls input[type="color"] {
+  margin: 5px;
+  border: none;
+  width: 80px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.preset-item {
+  display: inline-block;
+  width: 150px;
+  height: 50px;
+  margin: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative;
+}
+.remove-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: red;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+  padding: 2px 5px;
+  border-radius: 3px;
+}

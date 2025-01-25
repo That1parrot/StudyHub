@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Study Hub</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="icon" type="image/x-icon" href="Study-Hub.ico"/>
+</head>
+<body>
+  <!-- Logo -->
+  <img src="cat_1.jpg" alt="Study Hub Logo" class="top-left-image"/>
+
+  <!-- Main Menu -->
+  <div class="main-menu">
+    <h1 id="studyHubTitle">Study Hub</h1>
+    <p class="author">By: Ali Hussein</p>
+
+    <!-- Only Focus Timers, no Pomodoro Timers -->
+    <button onclick="showSection('FocusTimer-Simple')">Study with FocusTimer (Simple)</button>
+    <button onclick="showSection('FocusTimer-Complex')">Study with FocusTimer (Complex)</button>
+  </div>
+
+  <!-- Focus Timer Simple -->
+  <div id="FocusTimer-Simple" class="section" style="display:none;">
+    <div class="iframe-container">
+      <iframe id="focusSimpleTodo" src="simple_todolist/index.html" class="iframe-todo"></iframe>
+      <iframe id="focusSimpleTimer" src="a_studytimer/index.html" class="iframe-study-timer"></iframe>
+    </div>
+  </div>
+
+  <!-- Focus Timer Complex -->
+  <div id="FocusTimer-Complex" class="section" style="display:none;">
+    <div class="iframe-container">
+      <iframe id="focusComplexTodo" src="a_todolist/index.html" class="iframe-todo"></iframe>
+      <iframe id="focusComplexTimer" src="a_studytimer/index.html" class="iframe-study-timer"></iframe>
+    </div>
+  </div>
+
+  <!-- JavaScript to switch between sections and handle the tab title update -->
+  <script>
+    let activeIframe = null;
+
+    function showSection(sectionId) {
+      // Hide all sections
+      document.querySelectorAll('.section').forEach(function(sec) {
+        sec.style.display='none';
+      });
+      // Show the chosen section
+      document.getElementById(sectionId).style.display='block';
+
+      // Set active iframe for tab updates
+      const iframes=document.querySelectorAll('#'+sectionId+' iframe');
+      activeIframe=iframes[iframes.length-1].contentWindow; // Timer iframe last
+
+      // Smooth scroll
+      document.getElementById(sectionId).scrollIntoView({
+        behavior:'smooth',
+        block:'start'
+      });
+    }
+
+    // Listen for messages from iframes
+    window.addEventListener('message', function(event){
+      if(event.source===activeIframe && event.data.timerTime){
+        document.title=`Time Left: ${event.data.timerTime}`;
+      }
+    });
+  </script>
+
+</body>
+</html>

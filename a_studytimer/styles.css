@@ -1,0 +1,184 @@
+/* Basic layout for full viewport, centered items */
+body, html {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom, #ffffff, #ffffff);
+  }
+  
+  .container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    text-align: center;
+    width: 320px;
+    margin-bottom: 20px;
+  }
+  
+  /* Timer label styling */
+  #timerLabel {
+    font-size: 24px;
+    color: green;
+    margin-bottom: -20px;
+  }
+  
+  /* General buttons */
+  button {
+    width: 90%;
+    padding: 10px;
+    margin: 5px 0;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  /* Number & color inputs */
+  input[type="number"], input[type="color"] {
+    width: 90%;
+    padding: 8px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+  }
+  
+  input[type="color"] {
+    appearance: none;
+    border: none;
+    width: 100px; 
+    height: 30px; 
+    cursor: pointer;
+  }
+  
+  /* Background controls and preset library */
+  .background-controls, .preset-library {
+    width: 80%;
+    max-width: 900px;
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    text-align: center;
+  }
+  
+  .background-controls label {
+    font-weight: bold;
+    margin-right: 5px;
+    display: inline-block;
+    margin-bottom: 5px;
+  }
+  
+  /* Preset items styling */
+  .preset-item {
+    display: inline-block;
+    width: 150px;
+    height: 50px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+  }
+  .remove-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 12px;
+    padding: 2px 5px;
+    border-radius: 3px;
+  }
+  
+  /* Tooltip styling */
+  .tooltip {
+    position: relative;
+  }
+  .tooltip button {
+    background-color: #969900;
+    border: none;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 200px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -100px;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  /*************************************************
+   * STUDY GRAPH (Bar Chart)
+   *************************************************/
+  .study-graph-container {
+    width: 80%;
+    max-width: 900px;
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    text-align: center;
+  }
+  #studyGraph {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    height: 200px; /* Chart height */
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+  }
+  .bar-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 5px;
+    height: 100%;
+  }
+  .bar {
+    width: 30px;
+    background-color: #4CAF50;
+    margin-bottom: 5px;
+    border-radius: 4px;
+    transition: height 0.3s;
+  }
+  .bar-label {
+    font-size: 12px;
+    text-align: center;
+    width: 60px;
+    word-wrap: break-word; /* To wrap date text if needed */
+  }
+  
