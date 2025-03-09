@@ -7,61 +7,62 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Main Container for the Timer -->
-  <div class="container">
-    <!-- Timer Header -->
-    <div class="timer-header" style="display: flex; align-items: center; justify-content: center;">
-      <h1 id="timerLabel">Study Time: 30:00</h1>
-      <div class="tooltip" style="margin-left: 10px;">
-        <button style="background-color: #969900; border: none; border-radius: 50%; width: 20px; height: 20px; font-size: 12px;">?</button>
-        <span class="tooltiptext">Bonus time: If you study for an hour or more, you'll earn a 10-minute break.</span>
+
+  <!-- Main Study Container -->
+  <div class="study-container">
+
+    <!-- Study Timer Section (LEFT SIDE) -->
+    <div class="study-timer">
+      <div class="timer-header">
+        <h1 id="timerLabel">Study Time: 30:00</h1>
+      </div>
+
+      <h2 id="totalStudyTimeLabel">Total Study Time: 00:00</h2>
+
+      <!-- Timer Buttons -->
+      <div class="button-group">
+        <button id="pauseButton" onclick="togglePause()">Start</button>
+        <button onclick="switchMode()">Switch Mode</button>
+        <button onclick="resetTimer()">Reset</button>
+        <button onclick="openSetTimesDialog()">Set Times</button>
+      </div>
+
+      <!-- Increments -->
+      <div class="increment-controls">
+        <label for="studyIncrement">Study Increment (minutes):</label>
+        <input type="number" id="studyIncrement" value="10" />
+        <label for="breakIncrement">Break Increment (seconds):</label>
+        <input type="number" id="breakIncrement" value="180" />
+      </div>
+
+      <!-- Log Daily Study Button -->
+      <button id="logStudyButton" onclick="logDailyStudy()">Log Today's Study</button>
+    </div>
+
+    <!-- Study Log, Graphs, and Background Controls (RIGHT SIDE) -->
+    <div class="study-content">
+      <div class="study-graph-container">
+        <h2>Daily Study Log</h2>
+        <div id="studyGraph"></div>
+      </div>
+
+      <div class="background-controls">
+        <label for="color1">Color 1:</label>
+        <input type="color" id="color1" value="#f8f9fa">
+        <label for="color2">Color 2:</label>
+        <input type="color" id="color2" value="#e9ecef">
+        <button onclick="applyGradient()">Apply Background</button>
+        <button onclick="savePreset()">Save Preset</button>
+      </div>
+
+      <div class="preset-library">
+        <h3>Preset Library</h3>
+        <div id="presetContainer"></div>
       </div>
     </div>
 
-    <h2 id="totalStudyTimeLabel">Total Study Time: 00:00</h2>
-
-    <!-- Timer Buttons -->
-    <div class="button-group">
-      <button id="pauseButton" onclick="togglePause()">Pause</button>
-      <button onclick="switchMode()">Switch Mode</button>
-      <button onclick="resetTimer()">Reset</button>
-      <button onclick="openSetTimesDialog()">Set Times</button>
-    </div>
-    
-    <!-- Increments -->
-    <div class="increment-controls">
-      <label for="studyIncrement">Study Increment (minutes):</label>
-      <input type="number" id="studyIncrement" value="10" />
-      <label for="breakIncrement">Break Increment (seconds):</label>
-      <input type="number" id="breakIncrement" value="180" />
-    </div>
-
-    <!-- New: Daily Study Log Button -->
-    <button id="logStudyButton" onclick="logDailyStudy()">Log Today's Study</button>
   </div>
 
-  <!-- Bar Chart Container -->
-  <div class="study-graph-container">
-    <h2>Daily Study Log</h2>
-    <div id="studyGraph"></div>
-  </div>
-
-  <!-- Background Controls + Preset Library (Below everything) -->
-  <div class="background-controls">
-    <label for="color1">Color 1:</label>
-    <input type="color" id="color1" value="#f8f9fa">
-    <label for="color2">Color 2:</label>
-    <input type="color" id="color2" value="#e9ecef">
-    <button onclick="applyGradient()">Apply Background</button>
-    <button onclick="savePreset()">Save Preset</button>
-  </div>
-
-  <div class="preset-library">
-    <h3>Preset Library</h3>
-    <div id="presetContainer"></div>
-  </div>
-
-  <!-- The JavaScript -->
   <script src="script.js"></script>
 </body>
 </html>

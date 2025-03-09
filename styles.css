@@ -53,17 +53,18 @@ body {
     height: 100vh;
 }
 
-/* To-Do list iframe takes up 75% of the screen */
+/* To-Do list iframe takes up 50% of the screen */
 .iframe-todo {
-    flex: 3;
+    flex: 1;
     border: none;
 }
 
-/* Study Timer iframe takes up 25% */
+/* Study Timer iframe takes up 50% */
 .iframe-study-timer {
     flex: 1;
     border: none;
 }
+
 
 /* Sidebar specific styling (if needed) */
 .sidebar {

@@ -24,10 +24,10 @@ body, html {
   
   /* Timer label styling */
   #timerLabel {
-    font-size: 24px;
+    font-size: 80px; /* Increase the Study Time display */
+    font-weight: bold;
     color: green;
-    margin-bottom: -20px;
-  }
+}
   
   /* General buttons */
   button {
@@ -111,16 +111,19 @@ body, html {
     background-color: #969900;
     border: none;
     border-radius: 50%;
-    width: 20px;
-    height: 20px;
-    font-size: 12px;
+    width: px; /* Reduce width */
+    height: 15px; /* Reduce height */
+    font-size: 10px; /* Reduce font size */
     display: flex;
     align-items: center;
     justify-content: center;
-  }
+    padding: 0;
+    line-height: 1; /* Fix alignment */
+}
+
   .tooltip .tooltiptext {
     visibility: hidden;
-    width: 200px;
+    width: 100;
     background-color: black;
     color: #fff;
     text-align: center;
@@ -182,3 +185,58 @@ body, html {
     word-wrap: break-word; /* To wrap date text if needed */
   }
   
+
+
+
+  /* Main layout for Study Timer and other study elements */
+  .study-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 90%;
+    max-width: 1400px; /* Allow more width */
+    margin: auto;
+}
+
+/* Study Timer Section - Positioned on the Left */
+.study-timer {
+  flex: 2; /* Keeps it large */
+  max-width: 700px; /* Adjust width */
+  padding: 30px;
+  background: white; /* White background like other boxes */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
+  text-align: center;
+  border: 2px solid #ddd; /* Optional: Light border to match other sections */
+}
+
+
+
+
+/* Buttons inside the Study Timer */
+.study-timer button {
+  width: 100%;
+  padding: 15px;
+  font-size: 18px;
+}
+
+/* The Other Study Content (Logs, Graphs, Background Controls) */
+.study-content {
+  flex: 2; /* Takes up the remaining space */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  flex: 1.5; /* Reduce space for other elements */
+}
+
+/* Individual Content Sections */
+.study-graph-container, .background-controls, .preset-library {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 100%;
+}
